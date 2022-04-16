@@ -5,22 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/16e01ecf15.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
-      <h1>Sign Up</h1>
-      <p>Enter your details to sign up</p>
-      <form action="#" method="post">
+      <div class="header">
+        <h1>Sign Up</h1>
+        <p>Enter your details to sign up</p>
+      </div>
+      <form action="#" method="post" class="form" id="form">
         <label for="email">Email</label><br />
-        <input type="email" name="email" id="email" /><br />
+        <input type="email" name="email" id="email" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small><br />
         <label for="country">Country</label><br />
-        <input type="text" name="country" id="country" /><br />
+        <input type="text" name="country" id="country" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small><br />
         <label for="zipcode">Zip Code</label><br />
-        <input type="number" name="zipcode" id="zip" /><br />
+        <input type="number" name="zipcode" id="zip" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small><br />
         <label for="password">Password</label><br />
-        <input type="password" name="password" id="password" /><br />
+        <input type="password" name="password" id="password" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small><br />
         <label for="confirm">Confirm Password</label><br />
-        <input type="password" name="confirm" id="confirm" /><br /><br />
+        <input type="password" name="confirm" id="confirm" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small><br /><br />
 
         <button type="submit">Sign Up</button>
       </form>
