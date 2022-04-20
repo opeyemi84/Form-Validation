@@ -19,8 +19,14 @@ const checkInputs = () => {
   const passwordValue = password.value.trim();
   const confirm2Value = confirm2.value.trim();
 
+  //Regex Validations
+  const countryRegex = /^[a-zA-Z -]+$/.test(countryValue);
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,15}$/.test(
+    passwordValue
+  );
+
   if (emailValue === "") {
-    setErrorFor(email, "Email Cannot be empty");
+    setErrorFor(email, "Email Field cannot be empty");
   } else if (!isEmailValid(emailValue)) {
     setErrorFor(email, "Email is not valid");
   } else {
@@ -28,15 +34,14 @@ const checkInputs = () => {
   }
 
   if (countryValue === "") {
-    setErrorFor(country, "Cannot be empty");
+    setErrorFor(country, "Country field cannot be empty");
+  } else if (!countryRegex) {
+    setErrorFor(country, "Only alphabets can be entered");
   } else {
-    //add success class
     setSuccessFor(country);
   }
 
   if (zipValue === "") {
-    //show error
-    //add error class
     setErrorFor(zip, "Cannot be empty");
   } else if (!isZipCodeValid(zipValue)) {
     setErrorFor(zip, "Enter at least 5 US digit Zip Code");
@@ -45,15 +50,20 @@ const checkInputs = () => {
   }
 
   if (passwordValue === "") {
-    //show error
-    //add error class
+    setErrorFor(password, "Password cannot be empty");
+  } else if (!passwordRegex) {
+    setErrorFor(
+      password,
+      "Password must be at least 4 characters, no more than 15 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit."
+    );
   } else {
-    //add success class
+    setSuccessFor(password);
   }
 
   if (confirm2Value === "") {
     //show error
     //add error class
+    setErrorFor(password, "Cannot be empty");
   } else {
     //add success class
   }
