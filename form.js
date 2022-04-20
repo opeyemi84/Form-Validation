@@ -42,7 +42,7 @@ const checkInputs = () => {
   }
 
   if (zipValue === "") {
-    setErrorFor(zip, "Cannot be empty");
+    setErrorFor(zip, "Zip Code field cannot be empty");
   } else if (!isZipCodeValid(zipValue)) {
     setErrorFor(zip, "Enter at least 5 US digit Zip Code");
   } else {
@@ -50,7 +50,7 @@ const checkInputs = () => {
   }
 
   if (passwordValue === "") {
-    setErrorFor(password, "Password cannot be empty");
+    setErrorFor(password, "Password field cannot be empty");
   } else if (!passwordRegex) {
     setErrorFor(
       password,
@@ -63,8 +63,12 @@ const checkInputs = () => {
   if (confirm2Value === "") {
     //show error
     //add error class
+    setErrorFor(confirm2, "Confirm Password field cannot be empty");
+  } else if (passwordValue !== confirm2Value) {
+    setErrorFor(confirm2, "Password does not match");
   } else {
     //add success class
+    setSuccessFor(confirm2);
   }
 };
 
