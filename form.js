@@ -54,7 +54,7 @@ const checkInputs = () => {
   } else if (!passwordRegex) {
     setErrorFor(
       password,
-      "Password must be at least 4 characters, no more than 15 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit."
+      "Must be at least 4 characters, no more than 15 characters, must include at least one upper case letter, one lower case letter, and one numeric digit."
     );
   } else {
     setSuccessFor(password);
@@ -63,7 +63,6 @@ const checkInputs = () => {
   if (confirm2Value === "") {
     //show error
     //add error class
-    setErrorFor(password, "Cannot be empty");
   } else {
     //add success class
   }
